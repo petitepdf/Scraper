@@ -12,7 +12,10 @@ html= HTMLParser(response.text)
 events = html.css('ul.SearchResultPanelContentEventCardList-module__eventList___2wk-D li')
 
 for event in events:
-    print(event.css_first("h3").text())
-    #time
-    time= event.css_first("Tomorrow • 10:00 AM CDT")
-    print(time.text())
+    title = event.css_first("h3")
+    if title:
+        print(title.text())
+    
+    time = event.css_first("p.Typography_root__487rx")
+    if time:
+        print(time.text())
