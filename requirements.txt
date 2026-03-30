@@ -1,2 +1,4 @@
 httpx
 selectolax
+gspread
+google-auth
